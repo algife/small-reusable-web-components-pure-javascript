@@ -1,0 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+.global-container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+footer {
+  min-height: 6rem;
+  background: lightseagreen;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  flex: 1 1 auto; /* It makes the content occupy the whole space available */
+  background-color: aliceblue;
+  color: slategrey;
+
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* it centers in the flex direction */
+  align-items: center; /* it centers in the cross of the flex direction */
+}
+
+/* TOP BAR AND SIDENAV*/
+
+.topbar {
+  position: sticky;
+  z-index: 10000;
+  flex: 0 1 auto;
+  background-color: lightseagreen;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0.2rem 0.2rem 1rem 1px rgba(0, 0, 0, 0.2);
+}
+
+.topbar .logo {
+  text-decoration: none;
+  font-family: "Fasthand", cursive;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: whitesmoke;
+}
+
+/* TOAST notification */
+.toast-notification-btn {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 1em 2em;
+  background-color: tomato;
+  border: 0.5em tomato;
+  font-size: 1rem;
+  border-radius: 10em;
+  cursor: pointer;
+}
+
+.toast-message-container {
+  position: fixed;
+  right: 2rem;
+  top: 4rem;
+  color: whitesmoke;
+  z-index: 10001;
+  border-radius: 0.3em;
+}
+
+.toast-message {
+  margin-bottom: 1rem;
+  padding: 0.618em 1em;
+  background-color: tomato;
+  /* margin-top: 2em; */
+  box-shadow: 1px 1px 0.5em rgba(0, 0, 0, 0.618);
+}
