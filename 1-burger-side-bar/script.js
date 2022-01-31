@@ -8,23 +8,10 @@ const getOverlayElem = () => document.querySelector(`.${overlayClassname}`);
 
 const toggleSideNav = () => {
   try {
-    toggleSideNavVisibility();
-    displaceMenuIconOnSideNavVisible(); // Once sidenav is shown, displace the menu button accordingly
+    document.body.classList.toggle("sidenav-open");
   } catch (err) {
     console.error(err);
   }
-};
-
-const displaceMenuIconOnSideNavVisible = () => {
-  const sideNavDisplayed = !getSideNavElem().classList.contains("hidden");
-  getMenuIconElem().style.marginRight = sideNavDisplayed
-    ? `${getSideNavElem().clientWidth}px`
-    : 0;
-};
-
-const toggleSideNavVisibility = () => {
-  getSideNavElem().classList.toggle("hidden");
-  getOverlayElem().classList.toggle("hidden");
 };
 
 let isSideNavIsVisible = () => !getSideNavElem().classList.contains("hidden");

@@ -19,7 +19,6 @@ body {
   display: flex;
   flex-flow: column;
   height: 100%;
-  background: greenyellow;
 }
 
 footer {
@@ -68,10 +67,49 @@ footer {
   color: whitesmoke;
 }
 
+.sidenav-open .sidenav,
+.sidenav-open .backdrop-overlay,
+body:not(.sidenav-open) .topbar .menu-icon {
+  transform: translateX(0);
+}
+
+body:not(.sidenav-open) .sidenav {
+  transform: translateX(100%);
+}
+
+.sidenav-open .topbar {
+  width: calc(100% - 33vw);
+}
+
+.sidenav,
+.topbar,
+.menu-icon {
+  transition: all 0.5s ease;
+}
+.backdrop-overlay {
+  transition: width 0s ease, opacity 0.5s ease;
+}
+.sidenav-open .backdrop-overlay {
+  opacity: 1;
+}
+
+body:not(.sidenav-open) .topbar {
+  width: 100%;
+}
+
+body:not(.sidenav-open) .backdrop-overlay {
+  /* if we use display: none, the fade effect will not occur */
+  width: 0;
+  opacity: 0;
+  transition: opacity 0.5s ease,
+    /* transition the width as well to wait until the opacity transition ends */
+      width 5s ease;
+}
+
 .topbar .menu-icon {
   color: whitesmoke;
   font-size: 1.5rem;
-  padding: 0.3em 0.4em;
+  padding: 0.3em 0.618em;
   cursor: pointer;
   text-decoration: none;
 }
@@ -95,7 +133,11 @@ footer {
 }
 
 .backdrop-overlay {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 9999;
   height: 100vh;
   width: 100vw;
@@ -129,5 +171,5 @@ footer {
 }
 
 .hidden {
-  display: none;
+  transform: translateX(100vw);
 }

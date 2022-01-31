@@ -18,11 +18,10 @@
     <div class="topbar">
       <a class="logo" href="https://algife.com/"> Alexandre Gimenez </a>
 
-      <a class="menu-icon" href="javascript:toggleSideNav()"></a>
       <!-- Alternative entity element rather than using CSS Content: &#x2630; -->
+      <a class="menu-icon" href="javascript:toggleSideNav()"></a>
 
-      <nav class="sidenav hidden">
-        <!-- HIDDEN BY DEFAULT until sidenav is visible -->
+      <nav class="sidenav">
         <ul>
           <li><a href="https://algife.com/">My Portfolio</a></li>
           <li><a href="https://linkedin.com/in/algife/">My Linkedin</a></li>
@@ -30,11 +29,10 @@
       </nav>
     </div>
 
-    <!-- BACKDROP OVERLAY HIDDEN BY DEFAULT until sidenav is visible -->
-    <div class="backdrop-overlay hidden"></div>
-
     <!-- PAGE CONTENT -->
     <div class="page-content">
+      <div class="backdrop-overlay"></div>
+
       <div class="headline">
         <h1>Hamburger Toggle Side Bar</h1>
         <p>Small demo project with pure JavaScript</p>
