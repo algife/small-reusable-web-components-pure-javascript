@@ -23,13 +23,30 @@
 
     <!-- PAGE CONTENT -->
     <div class="page-content">
-      <div class="backdrop-overlay"></div>
-
       <div class="headline">
         <h1>Toast Notification</h1>
         <p>Small demo project with pure JavaScript</p>
 
-        <button class="toast-notification-btn">Toast me now!</button>
+        <div class="action-buttons-container">
+          <button
+            class="btn toast-message-btn"
+            onclick="createToast('Hello user from a Toast Notification!')"
+          >
+            Toast me now!
+          </button>
+          <span>or...</span>
+          <div class="desktop-apps-notification-container">
+            <button
+              class="btn desktop-notification-btn"
+              onclick="notifyMeHTMLAPI()"
+            >
+              Get a desktop notification instead!
+            </button>
+            <p class="small-text works-in-https">
+              <mark>It only works over HTTPS connections</mark>
+            </p>
+          </div>
+        </div>
       </div>
     </div>
 
