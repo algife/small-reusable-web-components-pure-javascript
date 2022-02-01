@@ -49,6 +49,7 @@ footer {
 .topbar {
   position: sticky;
   z-index: 10000;
+  min-height: 4rem;
   flex: 0 1 auto;
   background-color: lightseagreen;
   color: whitesmoke;
@@ -67,7 +68,6 @@ footer {
   color: whitesmoke;
 }
 
-/* MAIN FUNCTIONALITY */
 .btn {
   color: rgba(255, 255, 255, 0.8);
   padding: 1em 2em;
@@ -77,3 +77,5 @@ footer {
   border-radius: 10em;
   cursor: pointer;
 }
+
+/* MAIN FUNCTIONALITY */

@@ -49,6 +49,7 @@ footer {
 .topbar {
   position: sticky;
   z-index: 10000;
+  min-height: 4rem;
   flex: 0 1 auto;
   background-color: rebeccapurple;
   color: whitesmoke;
