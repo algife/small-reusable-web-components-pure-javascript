@@ -1,0 +1,154 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: whitesmoke;
+}
+
+.global-container {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+footer {
+  min-height: 6rem;
+  background: lightseagreen;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* PAGE CONTENT */
+.page-content {
+  flex: 1 1 auto; /* It makes the content occupy the whole space available */
+  background-color: aliceblue;
+  color: slategrey;
+
+  /* Center content */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* it centers in the flex direction */
+  align-items: center; /* it centers in the cross of the flex direction */
+}
+
+/* TOP BAR AND SIDENAV*/
+
+.topbar {
+  position: sticky;
+  z-index: 10000;
+  min-height: 4rem;
+  flex: 0 1 auto;
+  background-color: lightseagreen;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0.2rem 0.2rem 1rem 1px rgba(0, 0, 0, 0.2);
+}
+
+.topbar .logo {
+  text-decoration: none;
+  font-family: "Fasthand", cursive;
+  font-size: 2rem;
+  padding: 0;
+  margin: 0 auto;
+  padding: 0 1rem;
+  color: whitesmoke;
+}
+
+.btn {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 1em 2em;
+  background-color: tomato;
+  border: 0.5em tomato;
+  font-size: 1rem;
+  border-radius: 10em;
+  cursor: pointer;
+}
+
+/* MAIN FUNCTIONALITY */
+.modal-container {
+  /* ! creates the backdrop overlay effect */
+  position: fixed;
+  top: 4rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+
+.modal-content .modal-dismiss-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0.1em 0.3em;
+  border: 0;
+  color: rebeccapurple;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 2em;
+  cursor: pointer;
+}
+
+.modal-content {
+  position: relative;
+  margin-top: -4rem; /* compensate the distance where the container is created */
+  /* ! This is the card that contains the content for the modal / pop-up box */
+  flex: 0 1 auto;
+  box-shadow: 0.5rem 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+  background-color: whitesmoke;
+  padding: 2rem;
+  margin: auto;
+  min-width: 20rem;
+  min-height: 20rem;
+  border-radius: 1rem;
+}
+
+.modal-content .modal-headline {
+  margin-top: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.modal-content .extra-txt {
+  position: absolute;
+  font-style: italic;
+  color: rebeccapurple;
+  display: block;
+  bottom: 1.5rem;
+  right: 1rem;
+}
+
+.modal-container:not(.modal-displayed) {
+  opacity: 0;
+  height: 0;
+}
+
+.modal-displayed {
+  opacity: 1;
+  height: 100%;
+}
+
+/*
+
+
+.modal-displayed,
+.modal-container:not(.modal-displayed) {
+  transition: opacity 1s ease, height 3s ease-out;
+} */
